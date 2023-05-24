@@ -17,7 +17,7 @@ public class Main {
         int saving = 15000;
         int capital = 0;
         int i = 1;
-        while (purpose >= capital) {
+        while (purpose > capital) {
             System.out.println("Месяц " + i + " - сумма накоплений равна " + saving * i + " рублей.");
             i++;
             purpose = purpose - saving;
@@ -57,7 +57,8 @@ public class Main {
         System.out.println("ЗАДАЧА 4");
         double percentDeposit = 0.07;
         double deposit = 15_000;
-        for (int month = 1; deposit <= 12_000_000; month++) {
+        double capital = 12_000_000;
+        for (int month = 1; deposit < capital; month++) {
             deposit += deposit * percentDeposit;
             System.out.println("Месяц " + month + " сумма накоплений " + deposit);
         }
@@ -68,7 +69,8 @@ public class Main {
         System.out.println("ЗАДАЧА 5");
         double percentDeposit = 0.07;
         double deposit = 15_000;
-        for (int month = 1; deposit <= 12_000_000; month++) {
+        double capital = 12_000_000;
+        for (int month = 1; deposit < capital; month++) {
             deposit += deposit * percentDeposit;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + " сумма накоплений " + deposit);
@@ -103,11 +105,10 @@ public class Main {
     public static void task8() {
 
         System.out.println("ЗАДАЧА 8");
-        int startCometFlight = 1800;
-        int endCometFlight = 2100;
-        for (int yearComet = 1820; yearComet >= startCometFlight && yearComet <= endCometFlight; yearComet++) {
-            if (yearComet % 79 == 0) {
-                System.out.println(yearComet);}
+        int currentYear = 2023;
+        for (int year = 0; year <= currentYear + 100; year+=79) {
+            if (year >= currentYear - 200) {
+                System.out.println(year);}
 
         }
     }
